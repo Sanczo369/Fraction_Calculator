@@ -28,3 +28,14 @@ class Fraction:
             result_n = self.numerator + number2.numerator
             result_d = self.denominator
             return Fraction(int(result_n), int(result_d))
+
+    # Subtraction + (with magic methods __sub__())
+    def __sub__(self, number2):
+        if self.denominator != number2.denominator:
+            result_n = self.numerator * number2.denominator - number2.numerator * self.denominator
+            result_d = self.denominator * number2.denominator
+            return Fraction(result_n, result_d)
+        else:
+            result_n = self.numerator - number2.licznik
+            result_d = self.denominator
+            return Fraction(int(result_n), int(result_d))

@@ -1,7 +1,7 @@
 # Fraction Calculator
 Programme that calculate simple Equation with Fraction
 
-##Programme use:
+## Programme use:
 Class Fraction
 __init__
 __str__
@@ -10,7 +10,7 @@ __sub__
 __mul__
 __truediv__
 
-##Equation:
+## Equation:
 - Addition (+)
 - Subtraction (-)
 - Multiplication (x)

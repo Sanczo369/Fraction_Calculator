@@ -18,7 +18,7 @@ class Fraction:
                 return self.simplyfy()
         return self.numerator, self.denominator
 
-    # Addition + (with magic methods __add__())
+    # Addition (magic methods __add__())
     def __add__(self, number2):
         if self.denominator != number2.denominator:
             result_n = self.numerator * number2.denominator + number2.numerator * self.denominator
@@ -29,7 +29,7 @@ class Fraction:
             result_d = self.denominator
             return Fraction(int(result_n), int(result_d))
 
-    # Subtraction + (with magic methods __sub__())
+    # Subtraction (magic methods __sub__())
     def __sub__(self, number2):
         if self.denominator != number2.denominator:
             result_n = self.numerator * number2.denominator - number2.numerator * self.denominator
@@ -39,3 +39,15 @@ class Fraction:
             result_n = self.numerator - number2.licznik
             result_d = self.denominator
             return Fraction(int(result_n), int(result_d))
+
+    # Multiplication (magic methods __mul__())
+    def __mul__(self, number2):
+        result_n = self.numerator * number2.numerator
+        result_d = self.denominator * number2.denominator
+        return Fraction(int(result_n), int(result_d))
+
+    # Division (magic methods __truediv__())
+    def __truediv__(self, number2):
+        result_n = self.numerator * number2.denominator
+        result_d = self.denominator * number2.numerator
+        return Fraction(int(result_n), int(result_d))

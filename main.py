@@ -54,21 +54,37 @@ class Fraction:
 
 
 def main():
-    equation = input()
-    equationTab = equation.split()
-    if len(equationTab) == 3:
-        number1 = equationTab[0].split("/")
-        if len(number1) == 1:
-            number1.append('1')
-        number2 = equationTab[2].split("/")
-        if len(number2) == 1:
-            number2.append('1')
-        if int(number1[1]) != 0 and int(number2[1]) != 0:
-            number1 = Fraction(int(number1[0]), int(number1[1]))
-            number2 = Fraction(int(number2[0]), int(number2[1]))
-        else:
-            print('ERROR')
-    else:
-        print('ERROR')
+    while True:
+        try:
+            equation = input()
+            equationTab = equation.split()
+            if len(equationTab) == 3:
+                number1 = equationTab[0].split("/")
+                if len(number1) == 1:
+                    number1.append('1')
+                number2 = equationTab[2].split("/")
+                if len(number2) == 1:
+                    number2.append('1')
+                if int(number1[1]) != 0 and int(number2[1]) != 0:
+                    number1 = Fraction(int(number1[0]), int(number1[1]))
+                    number2 = Fraction(int(number2[0]), int(number2[1]))
+                    if equationTab[1] == "+":
+                        print(number1 + number2)
+                    elif equationTab[1] == "-":
+                        print(number1 - number2)
+                    elif equationTab[1] == "*":
+                        print(number1 * number2)
+                    elif equationTab[1] == ":":
+                        print(number1 / number2)
+                    else:
+                        print('ERROR')
+                else:
+                    print('ERROR')
+            else:
+                print('ERROR')
+        except EOFError:
+            break
+
+
 if __name__ == '__main__':
     main()

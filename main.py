@@ -51,3 +51,11 @@ class Fraction:
         result_n = self.numerator * number2.denominator
         result_d = self.denominator * number2.numerator
         return Fraction(int(result_n), int(result_d))
+
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()
